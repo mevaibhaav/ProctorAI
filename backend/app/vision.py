@@ -54,9 +54,11 @@ class LocalFaceAnalyzer:
                 left_ratio = (points[468].x - points[33].x) / max(0.001, points[133].x - points[33].x)
                 right_ratio = (points[473].x - points[362].x) / max(0.001, points[263].x - points[362].x)
                 ratio = (left_ratio + right_ratio) / 2
-                if ratio < 0.32:
+                # Use a broad neutral band so normal eye movement while reading
+                # across the question is not treated as sustained looking away.
+                if ratio < 0.22:
                     gaze = "left"
-                elif ratio > 0.68:
+                elif ratio > 0.78:
                     gaze = "right"
                 else:
                     gaze = "center"
