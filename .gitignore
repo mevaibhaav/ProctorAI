@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.venv/
+__pycache__/
+*.py[cod]
+*.db
+.env
+.pytest_cache/
+coverage/
+*.tsbuildinfo
+backend/evidence/
